@@ -18,6 +18,7 @@ import java.util.ResourceBundle;
  */
 public class AutoKadWindow extends JFrame{
 
+    private JToolBar toolBar;
     private final ResourceBundle messages;
     private DrawingArea comp;
     private final DefaultDrawingController drawingController;
@@ -57,23 +58,27 @@ public class AutoKadWindow extends JFrame{
         final JMenu edit = new JMenu(messages.getString("edit"));
         edit.add(createColorMenuItem());
         edit.add(createUndoMenuItem());
-        edit.add(loadToolBar());
+        edit.add(loadToolBarFromFile());
         return edit;
     }
 
-    private Component loadToolBar() {
+    private Component loadToolBarFromFile() {
         final JMenuItem load = new JMenuItem(messages.getString("loadtoolbar"));
         load.addActionListener(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                changeToolBar();
+
+                changeToNewToolBar();
             }
         });
         return load;
     }
 
-    private void changeToolBar() {
-        this.add(ToolbarBuilder.getToolbar(), BorderLayout.WEST);
+    private void changeToNewToolBar() {
+        toolBar.removeAll();
+        ToolbarBuilder.getToolbar(toolBar);
+        toolBar.revalidate();
+        toolBar.repaint();
     }
 
 
@@ -85,7 +90,7 @@ public class AutoKadWindow extends JFrame{
     }
 
     private JToolBar createFigureToolbar () {
-        final JToolBar toolBar = new JToolBar();
+        toolBar = new JToolBar();
         addFigureToolBarButtons(toolBar);
         return toolBar;
     }
@@ -104,6 +109,7 @@ public class AutoKadWindow extends JFrame{
 
         JButton roundedRectangleButton = FigureButton.getRoundedRectangleButton(drawingController);
         figureToolBar.add(roundedRectangleButton);
+
     }
 
     private JMenuItem createColorMenuItem() {

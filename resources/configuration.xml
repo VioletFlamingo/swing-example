@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <figures>
+        <figure id="triangle" >
+            <name>Trojkat</name>
+            <class>pl.agh.edu.jtp.autokad.ui.figure.Triangle</class>
+            <icon>triangle.png</icon>
+            <hint>Rysuje trojkat</hint>
+        </figure>
+        <figure id="circle">
+            <name>Kolo</name>
+            <class>pl.agh.edu.jtp.autokad.ui.figure.Circle</class>
+            <icon>circle.png</icon>
+            <hint>Rysuje kolo</hint>
+        </figure>
+    </figures>
+</configuration>

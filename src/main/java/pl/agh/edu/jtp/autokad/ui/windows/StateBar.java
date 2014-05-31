@@ -1,6 +1,5 @@
 package pl.agh.edu.jtp.autokad.ui.windows;
 
-import pl.agh.edu.jtp.autokad.ui.figure.Figure;
 import pl.agh.edu.jtp.autokad.ui.figure.Oval;
 import pl.agh.edu.jtp.autokad.ui.figure.Rectangle;
 import pl.agh.edu.jtp.autokad.ui.figure.RoundedRectangle;

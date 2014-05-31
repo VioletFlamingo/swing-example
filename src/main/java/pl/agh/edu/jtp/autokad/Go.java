@@ -1,5 +1,6 @@
 package pl.agh.edu.jtp.autokad;
 
+import pl.agh.edu.jtp.autokad.config.DOMObjectGetter;
 import pl.agh.edu.jtp.autokad.ui.windows.AutoKadWindow;
 import pl.agh.edu.jtp.autokad.ui.windows.ComponentsText;
 import pl.agh.edu.jtp.autokad.ui.windows.LanguageChooser;
@@ -36,4 +37,5 @@ public class Go {
         ComponentsText.setText(messages);
         createAndShowUI();
     }
+
 }
